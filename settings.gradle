@@ -1,1 +1,1 @@
-include ':app', ':jiuxiantoollib'
+include ':app'

@@ -1,9 +1,8 @@
 package com.jiayou.fyg.hellolibrary;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-import com.icodeyou.library.CommonAdapter;
 import com.jiayou.fyg.jiuxiantoollib.JiuxianUtil;
 
 public class MainActivity extends AppCompatActivity {

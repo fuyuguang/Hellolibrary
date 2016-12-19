@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Hellolibrary.iml" filepath="$PROJECT_DIR$/Hellolibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jiuxiantoollib/jiuxiantoollib.iml" filepath="$PROJECT_DIR$/jiuxiantoollib/jiuxiantoollib.iml" />
     </modules>
   </component>
 </project>
