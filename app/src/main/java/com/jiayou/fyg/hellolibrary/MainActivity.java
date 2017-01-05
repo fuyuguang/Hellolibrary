@@ -1,5 +1,6 @@
 package com.jiayou.fyg.hellolibrary;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.feature_2:
 
                 ToastUtils.show(this," 我是 feature 2 ");
+                startActivity(new Intent(this,Feature2.class));
                 break;
 
             case R.id.feature_3:
