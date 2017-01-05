@@ -1,5 +1,6 @@
 package com.jiayou.fyg.hellolibrary;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 ToastUtils.show(this, "我是功能 1 按钮 ");
 
+                startActivity(new Intent(this,Feature1.class));
             break;
 
 
