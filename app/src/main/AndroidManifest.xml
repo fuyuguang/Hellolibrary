@@ -15,6 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity android:name="com.jiayou.fyg.hellolibrary.Feature3"></activity>
     </application>
 
 </manifest>
