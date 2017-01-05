@@ -16,4 +16,11 @@
         android:layout_height="wrap_content"
         android:text="功能1按钮" />
 
+
+    <Button
+        android:id="@+id/feature_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="功能2按钮" />
+
 </LinearLayout>

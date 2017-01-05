@@ -9,9 +9,12 @@ import com.jiayou.fyg.jiuxiantoollib.JiuxianUtil;
 
 import cn.trinea.android.common.util.ToastUtils;
 
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button feature_1;
+
+    private Button feature_2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         feature_1 = (Button) findViewById(R.id.feature_1);
         feature_1.setOnClickListener(this);
+        feature_2 = (Button) findViewById(R.id.feature_2);
+        feature_2.setOnClickListener(this);
 
     }
 
@@ -38,6 +43,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             break;
 
 
+            case R.id.feature_2:
+
+                ToastUtils.show(this," 我是 feature 2 ");
+                break;
         }
     }
 }
