@@ -11,6 +11,7 @@
     tools:context="com.jiayou.fyg.hellolibrary.MainActivity">
 
     <Button
+
         android:id="@+id/feature_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,4 +24,10 @@
         android:layout_height="wrap_content"
         android:text="功能2按钮" />
 
+
+    <Button
+        android:id="@+id/feature_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="功能 3 按钮" />
 </LinearLayout>
