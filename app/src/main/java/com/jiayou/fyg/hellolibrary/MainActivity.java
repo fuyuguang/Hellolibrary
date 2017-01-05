@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.feature_3:
 
                 ToastUtils.show(this," 我是 feature 3");
+
+                startActivity(new Intent(this,Feature3.class));
                 break;
         }
     }
