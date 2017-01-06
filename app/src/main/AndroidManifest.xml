@@ -17,8 +17,9 @@
         </activity>
 
 
-
+        <activity android:name="com.jiayou.fyg.hellolibrary.Feature2"> </activity>
         <activity android:name="com.jiayou.fyg.hellolibrary.Feature1"> </activity>
+
 
 
         <activity android:name="com.jiayou.fyg.hellolibrary.Feature4"></activity>
