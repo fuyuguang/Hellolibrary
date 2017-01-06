@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button feature_2;
 
     private Button feature_3;
+    private Button feature_4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         feature_3 = (Button) findViewById(R.id.feature_3);
         feature_3.setOnClickListener(this);
+        feature_4 = (Button) findViewById(R.id.feature_4);
+        feature_4.setOnClickListener(this);
 
         JiuxianUtil.getAppName();
 
@@ -60,6 +63,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 ToastUtils.show(this," 我是 feature 3");
 
                 startActivity(new Intent(this,Feature3.class));
+                break;
+
+            case R.id.feature_4:
+
+                ToastUtils.show(this," 我是 feature 4");
+
+                startActivity(new Intent(this,Feature4.class));
                 break;
         }
     }
