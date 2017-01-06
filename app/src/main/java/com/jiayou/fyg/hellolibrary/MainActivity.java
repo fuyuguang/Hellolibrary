@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button feature_3;
     private Button feature_4;
     private Button feature_5;
+    private Button feature_6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         feature_5 = (Button) findViewById(R.id.feature_5);
         feature_5.setOnClickListener(this);
+
+        feature_6 = (Button) findViewById(R.id.feature_6);
+        feature_6.setOnClickListener(this);
 
     }
 
