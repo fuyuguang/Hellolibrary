@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         JiuxianUtil.getAppName();
 
+        //TODO 添加 feature 8 的功能
+
 
         feature_1 = (Button) findViewById(R.id.feature_1);
         feature_1.setOnClickListener(this);
