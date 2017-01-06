@@ -15,7 +15,7 @@
         android:id="@+id/feature_3_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="我是 界面 3 中的按钮" />
+        android:text="我是 界面 4 中的按钮" />
 
 
 
