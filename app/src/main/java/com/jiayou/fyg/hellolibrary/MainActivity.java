@@ -11,7 +11,6 @@ import com.jiayou.fyg.jiuxiantoollib.JiuxianUtil;
 import cn.trinea.android.common.util.ToastUtils;
 
 
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button feature_1;
@@ -34,7 +33,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         JiuxianUtil.getAppName();
 
-        //ToDo 我在这个版本中加入了 功能 7 的 代码
 
         feature_1 = (Button) findViewById(R.id.feature_1);
         feature_1.setOnClickListener(this);
