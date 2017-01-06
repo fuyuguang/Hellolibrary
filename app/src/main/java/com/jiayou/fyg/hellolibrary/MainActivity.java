@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button feature_3;
     private Button feature_4;
+    private Button feature_5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         feature_1.setOnClickListener(this);
         feature_2 = (Button) findViewById(R.id.feature_2);
         feature_2.setOnClickListener(this);
+
+        feature_5 = (Button) findViewById(R.id.feature_5);
+        feature_5.setOnClickListener(this);
 
     }
 
@@ -71,6 +75,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 startActivity(new Intent(this,Feature4.class));
                 break;
+
+            case R.id.feature_5:
+
+                ToastUtils.show(this," 我是 feature 5");
+
+                break;
+
+
+
         }
     }
 
