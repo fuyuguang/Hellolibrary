@@ -33,8 +33,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         JiuxianUtil.getAppName();
 
-        //TODO 添加 feature 8 的功能
-
 
         //TODO 添加 feature 9 的功能
 
