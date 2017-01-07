@@ -44,8 +44,17 @@
         android:text="功能 5 按钮" />
 
     <Button
+
         android:id="@+id/feature_21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="功能 21 按钮" />
+
+    <Button
+        android:id="@+id/feature_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="功能 20 按钮" />
+
+
 </LinearLayout>
