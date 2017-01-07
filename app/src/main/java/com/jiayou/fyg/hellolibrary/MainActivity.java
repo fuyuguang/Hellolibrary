@@ -112,6 +112,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
 
+            case R.id.feature_20:
+
+                ToastUtils.show(this," feature_21 btn text :"+feature_21.getText().toString());
+
+
+                break;
+
+            case R.id.feature_21:
+
+                ToastUtils.show(this," feature_20 btn text :"+feature_20.getText().toString());
+
+                break;
 
 
         }
