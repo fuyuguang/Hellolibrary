@@ -124,6 +124,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 ToastUtils.show(this," feature_20 btn text :"+feature_20.getText().toString());
 
                 break;
+            
 
 
         }
