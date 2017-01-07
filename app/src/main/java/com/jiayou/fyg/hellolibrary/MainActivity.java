@@ -44,8 +44,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //TODO 添加 feature 12 的功能
 
         //TODO 添加 feature 14 的功能
-        
-        //TODO 添加 feature 15 的功能
 
 
 
