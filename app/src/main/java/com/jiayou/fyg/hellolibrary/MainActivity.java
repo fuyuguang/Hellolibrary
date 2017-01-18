@@ -20,7 +20,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button feature_3;
     private Button feature_4;
     private Button feature_5;
+
     private Button feature_21;
+
+    private Button feature_20;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +68,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         feature_21 = (Button) findViewById(R.id.feature_21);
         feature_21.setOnClickListener(this);
 
+        feature_20 = (Button) findViewById(R.id.feature_20);
+        feature_20.setOnClickListener(this);
+
+
     }
 
     @Override
@@ -104,8 +112,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
 
+            case R.id.feature_20:
+
+                ToastUtils.show(this," feature_21 btn text :"+feature_21.getText().toString());
 
 
+                break;
+
+            case R.id.feature_21:
+
+                ToastUtils.show(this," feature_20 btn text :"+feature_20.getText().toString());
+
+                break;
+
+    
+            //TODO  增加  note 1
+
+            // haha1
+
+            // haha2
+
+            // haha3
+
+
+            // haha  24 1
         }
     }
 
