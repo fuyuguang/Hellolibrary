@@ -1,9 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'fyg'
+            keyPassword '111111'
+            storeFile file('test')
+            storePassword '111111'
+        }
+    }
     compileSdkVersion 24
     buildToolsVersion "25.0.1"
-
     defaultConfig {
         applicationId "com.jiayou.fyg.hellolibrary"
         minSdkVersion 14
@@ -13,8 +20,12 @@ android {
     }
     buildTypes {
         release {
-//            minifyEnabled false
-//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            signingConfig signingConfigs.config
         }
     }
 }
@@ -24,6 +35,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.github.fuyuguang:Hellolibrary:v3.0'
-
     compile 'cn.trinea.android.common:trinea-android-common:4.2.15'
 }
