@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         feature_4 = (Button) findViewById(R.id.feature_4);
         feature_4.setOnClickListener(this);
 
-        JiuxianUtil.getAppName();
 
+        ToastUtils.show(getApplication(),JiuxianUtil.getAppName());
 
         //TODO 添加 feature 9 的功能
 
