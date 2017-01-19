@@ -109,4 +109,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        ToastUtils.show(getApplication(),JiuxianUtil.getAppName());
+
+    }
 }
