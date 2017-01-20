@@ -11,8 +11,10 @@ android {
     buildToolsVersion "25.0.1"
 
 
-
+    def apkFile = ""
     delete rootProject.buildDir
+
+
 
 
 
@@ -62,6 +64,7 @@ android {
     defaultConfig {
         versionName versionN
         versionCode versionC
+
     }
 
     /**
@@ -78,16 +81,17 @@ android {
         buildInfoProps['buildTime'] = buildTime
         buildInfoProps['apkFileName'] = "jiuxian_${defaultConfig.versionName}/channels/jiuxian_${defaultConfig.versionName}_".toString() + channel + ".apk"
 
+        //获取apk 输出路径
+        def fileName = "jiuxian_${defaultConfig.versionName}_" + channel + ".apk"
+        apkFile = new File(rootProject.buildDir.path + "/apk/jiuxian_${defaultConfig.versionName}", fileName).toString()
+
+        buildInfoProps['apkFile'] = apkFile;
+
+
         def writer = buildInfoFile.newWriter()
         buildInfoProps.store(writer, null)
         writer.close()
     }
-
-
-
-
-
-
 
 
 
@@ -112,8 +116,12 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+
+
     buildTypes {
         release {
+
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
@@ -126,12 +134,30 @@ android {
                     }
                 }
             }
-
         }
         debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        def fileName = "jiuxian_${defaultConfig.versionName}_" + channel + ".apk"
+                        output.outputFile = new File(rootProject.buildDir.path + "/apk/jiuxian_${defaultConfig.versionName}", fileName)
+                    }
+                }
+            }
         }
     }
+
+
+
+
+
+
+
+
 }
 
 dependencies {
@@ -140,4 +166,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.github.fuyuguang:Hellolibrary:v3.0'
     compile 'cn.trinea.android.common:trinea-android-common:4.2.15'
+
 }
