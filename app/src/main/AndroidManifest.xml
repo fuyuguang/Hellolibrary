@@ -26,6 +26,15 @@
         
         <activity android:name="com.jiayou.fyg.hellolibrary.Feature3"></activity>
 
+
+
+        <meta-data
+            android:name="JIUXIAN_CHANNEL"
+            android:value="jiuxianwebsite" />
+        <meta-data
+            android:name="BUILD_TIME"
+            android:value="${BUILD_TIME_VALUE}" />
+
     </application>
 
 </manifest>

@@ -1,6 +1,91 @@
+import java.text.SimpleDateFormat
+
 apply plugin: 'com.android.application'
 
 android {
+
+
+
+
+
+    /**
+     * 获取build时间
+     */
+    def df = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss")
+    df.setTimeZone(TimeZone.getDefault())
+    def buildTime = df.format(new Date())
+
+    defaultConfig {
+        multiDexEnabled true
+        applicationId "com.jiuxianapk.ui"
+        minSdkVersion 14
+        targetSdkVersion 21
+        manifestPlaceholders = [BUILD_TIME_VALUE: buildTime]
+
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+    }
+
+
+
+    /**
+     * 获取channel,versionName,versionCode
+     */
+    def channel = 'jiuxianwebsite'
+    def versionN = null
+    def versionC = null
+    def channelInfoFile = file('./../buildConfig/app.properties')
+    if (channelInfoFile.canRead()) {
+        def Properties channelProps = new Properties()
+        FileInputStream input = new FileInputStream(channelInfoFile)
+        channelProps.load(input)
+        input.close()
+        channel = channelProps['app.channel']
+        versionN = channelProps['app.version.name']
+        versionC = channelProps['app.version.code'].toInteger()
+    }
+
+
+
+    /**
+     * 设置version
+     */
+    defaultConfig {
+        versionName versionN
+        versionCode versionC
+    }
+
+    /**
+     * 修改build文件
+     */
+    def buildInfoFile = file('./../buildConfig/build_info.properties')
+    if (buildInfoFile.canRead()) {
+        def Properties buildInfoProps = new Properties()
+        FileInputStream input = new FileInputStream(buildInfoFile)
+        buildInfoProps.load(input)
+        input.close()
+
+        buildInfoProps['versionName'] = "${defaultConfig.versionName}".toString()
+        buildInfoProps['buildTime'] = buildTime
+        buildInfoProps['apkFileName'] = "jiuxian_${defaultConfig.versionName}/channels/jiuxian_${defaultConfig.versionName}_".toString() + channel + ".apk"
+
+        def writer = buildInfoFile.newWriter()
+        buildInfoProps.store(writer, null)
+        writer.close()
+    }
+
+
+
+
+
+
+
+
+
+
+
+
     signingConfigs {
         config {
             keyAlias 'fyg'
@@ -23,6 +108,16 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        def fileName = "jiuxian_${defaultConfig.versionName}_" + channel + ".apk"
+                        output.outputFile = new File(rootProject.buildDir.path + "/apk/jiuxian_${defaultConfig.versionName}", fileName)
+                    }
+                }
+            }
+
         }
         debug {
             signingConfig signingConfigs.config
