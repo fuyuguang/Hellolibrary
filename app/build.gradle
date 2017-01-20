@@ -12,6 +12,10 @@ android {
 
 
 
+    delete rootProject.buildDir
+
+
+
     /**
      * 获取build时间
      */
