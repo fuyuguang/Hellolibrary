@@ -164,11 +164,14 @@ android {
         //过滤器
         excludeFilter = new File("${project.rootDir}/findbug_filter.xml")
         classes = files("$project.buildDir/intermediates/classes")
-        source = fileTree('build/intermediates/classes/debug/com/')
+        source = fileTree('src/main/java')
         classpath = files()
         reports {
-            xml {
-                destination "build/findbugs.xml"
+
+            reports {
+                //只能开启一个
+                xml.enabled = true
+                html.enabled = false
             }
         }
     }
