@@ -1,6 +1,7 @@
 import java.text.SimpleDateFormat
 
 apply plugin: 'com.android.application'
+apply plugin: "findbugs"
 
 android {
 
@@ -152,11 +153,28 @@ android {
 
 
 
+    task findbugs(type: FindBugs) {
+        //toolVersion = "2.0.1"
+        ignoreFailures = true
+        effort = "max"
+        reportLevel = "low"
+        classes = files("$project.buildDir/intermediates/classes")
+        source = fileTree('build/intermediates/classes/debug/com/sn/')
+        classpath = files()
+        reports {
+            xml {
+                destination "build/findbugs.xml"
+            }
+        }
+    }
 
 
 
 
 }
+
+
+
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
