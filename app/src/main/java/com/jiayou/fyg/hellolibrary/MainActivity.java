@@ -64,6 +64,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         feature_21 = (Button) findViewById(R.id.feature_21);
         feature_21.setOnClickListener(this);
 
+
+
+
     }
 
     @Override
@@ -101,6 +104,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.feature_5:
 
                 ToastUtils.show(this," 我是 feature 5");
+
+                String testStr = null;
+                testStr.isEmpty();
 
                 break;
 
