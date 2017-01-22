@@ -19,6 +19,8 @@ android {
 
 
 
+
+
     /**
      * 获取build时间
      */
@@ -153,13 +155,16 @@ android {
 
 
 
+
     task findbugs(type: FindBugs) {
         //toolVersion = "2.0.1"
         ignoreFailures = true
         effort = "max"
         reportLevel = "low"
+        //过滤器
+        excludeFilter = new File("${project.rootDir}/findbug_filter.xml")
         classes = files("$project.buildDir/intermediates/classes")
-        source = fileTree('build/intermediates/classes/debug/com/sn/')
+        source = fileTree('build/intermediates/classes/debug/com/')
         classpath = files()
         reports {
             xml {
