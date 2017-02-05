@@ -39,23 +39,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         JiuxianUtil.getAppName();
 
 
-        //TODO 添加 feature 9 的功能
-
-        //TODO 添加 feature 10 的功能
-
-
-        //TODO 添加 feature 11 的功能
-
-        //TODO 添加 feature 12 的功能
-
-        //TODO 添加 feature 14 的功能
-
-
-
-        //TODO 添加 feature 16 的功能
-
-        //TODO 添加 feature 17 的功能
-
 
         feature_1 = (Button) findViewById(R.id.feature_1);
         feature_1.setOnClickListener(this);
@@ -125,17 +108,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
 
-    
-            //TODO  增加  note 1
-
-            // haha1
-
-            // haha2
-
-            // haha3
-
-
-            // haha  24 1
         }
     }
 
