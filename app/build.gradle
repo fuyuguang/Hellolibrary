@@ -2,8 +2,11 @@ import java.text.SimpleDateFormat
 
 apply plugin: 'com.android.application'
 apply plugin: "findbugs"
+
+apply plugin: 'pmd'
 //代码覆盖率插件
 apply plugin: 'jacoco'
+
 android {
 
 
@@ -155,6 +158,29 @@ android {
 
 
 
+    task pmd(type: Pmd) {
+        ignoreFailures = false
+        ruleSetFiles = files("${project.rootDir}/pmd/pmd-ruleset.xml")
+        ruleSets = []
+
+        source 'src'
+        include '**/*.java'
+        exclude '**/gen/**'
+        exclude 'androidTest/**'
+        exclude 'test/**'
+
+        reports {
+            xml.enabled = false
+            html.enabled = true
+            xml {
+                destination "$reportsDir/pmd/pmd.xml"
+            }
+            html {
+                destination "$reportsDir/pmd/pmd.html"
+            }
+        }
+    }
+
 
 
     task findbugs(type: FindBugs) {
@@ -176,6 +202,8 @@ android {
             }
         }
     }
+
+
 
 
 
